@@ -8,7 +8,7 @@ library(tidyr)
 library(stringr)
 library(magick)
 
-source(paste0(syntaxdir,"FE_Source_.R"))
+source("FE_Source_.R")
 
 plic <- installed.packages(.Library, priority = "high", fields = "License")
 
