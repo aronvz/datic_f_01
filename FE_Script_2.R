@@ -6,10 +6,8 @@ library(gganimate)
 library(reshape)
 library(tidyr)
 library(stringr)
-#syntaxdir <- c("C:\\Users\\pamel\\Documents\\Emilia\\datic_f_01\\")
-syntaxdir <- c("D:\\Work\\Datic\\FEmilia\\datic_f_01\\")
-#syntaxdir <- c("D:\\Work\\Datic\\FEmilia_Datos\\Etapa_1\\")
-source(paste0(syntaxdir,"FE_Source.R"))
+
+source(paste0(syntaxdir,"FE_Source_.R"))
 plic <- installed.packages(.Library, priority = "high", fields = "License")
 
 
@@ -129,3 +127,4 @@ p <- datamelt2 %>%
 animate(p)
 
 #Grafico 4
+
