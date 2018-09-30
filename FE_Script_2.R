@@ -1,14 +1,23 @@
 library(dplyr)
 library(ggplot2)
+#devtools::install_github('thomasp85/gganimate')
+#instalar tweer
+library(gganimate)
 library(reshape)
 library(tidyr)
 library(stringr)
+<<<<<<< HEAD
 library(gganimate)
 library(magick)
 
 syntaxdir <- c("C:\\Users\\pamel\\Documents\\Emilia\\datic_f_01\\")
+=======
+#syntaxdir <- c("C:\\Users\\pamel\\Documents\\Emilia\\datic_f_01\\")
+syntaxdir <- c("D:\\Work\\Datic\\FEmilia\\datic_f_01\\")
+#syntaxdir <- c("D:\\Work\\Datic\\FEmilia_Datos\\Etapa_1\\")
+>>>>>>> 57121331a15971f92de2ee8a20ea454fa7acdab6
 source(paste0(syntaxdir,"FE_Source.R"))
-
+plic <- installed.packages(.Library, priority = "high", fields = "License")
 
 
 Fallecidos10_17 <- Siniestros10_17[Siniestros10_17$Muertos > 0,]
