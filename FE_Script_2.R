@@ -38,7 +38,7 @@ Fallecidos10_17 <- Fallecidos10_17 %>%
 
 Fallecidos <- Fallecidos10_17 %>% 
   group_by(Año) %>%
-  summarise(Fallecidos = sum(Muertos),
+  summarise(Fallecidos = sum(Fallecidos),
             Graves = sum(Graves)) %>%
   mutate(Victimas = Fallecidos + Graves)
 
