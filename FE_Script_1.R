@@ -7,7 +7,7 @@ S_10_17 <- read_excel("SINIESTROS 2010-2017.xlsx")
 Frec_DENUNCIAS_10_16 <- read_excel("Frec_DENUNCIAS_ANUAL_2001_2016w.xlsx", sheet = "Homicidio", 
                                    col_names = T, skip = 3)
 Frec_DENUNCIAS_10_16
-SINIESTROS = S_10_17[S_10_17$Muertos > 0,]
+SINIESTROS = S_10_17[S_10_17$Muertos > 0,]ñ
 
 
 SIN = SINIESTROS %>% group_by(Año) %>%
