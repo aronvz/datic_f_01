@@ -84,7 +84,7 @@ Denuncias10_16 <- melt(as.data.frame(FreqDenuncias10_16),
 Denuncias <- Denuncias10_16 %>%
   filter(variable %in% c(2013,2014,2015,2016)) %>%
   mutate(Año = as.numeric(as.character(variable)),
-         Denuncias = value) %>%
+         Denuncias = as.numeric(as.character(value))) %>%
   select(Año,Reg,Denuncias)
 
 res2 <- left_join(Denuncias,Fallecidos, by = c("Año","Reg"))
