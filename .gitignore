@@ -4,9 +4,15 @@
 .Ruserdata
 #a.valdes@uc.cl
 desktop.ini
+<<<<<<< HEAD
+=======
 FE_Source.R
 graf2.gif
 tes
+<<<<<<< HEAD
 Pame_default.R
 FE_Graphs.R
 FE_Source_avz.R
+=======
+>>>>>>> 2bb1d7d4ec7c0473aa8aadfde76861faa2b460dd
+>>>>>>> a5346bdf8f1afc49591e89bfeea659cdd3ee0f09
