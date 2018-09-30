@@ -12,3 +12,5 @@ Siniestros10_17 <- read_excel(paste0(pcdir,datadir,"SINIESTROS 2010-2017.xlsx"))
 FreqDenuncias10_16 <- read_excel(paste0(pcdir,datadir,"Frec_DENUNCIAS_ANUAL_2001_2016w.xlsx"), sheet = "Homicidio", 
                                    col_names = T, skip = 3)
 
+#Base de datos Poblacion por regiones
+PoblacionRegiones <- read_excel(paste0(pcdir,datadir,"Poblacion Censo.xlsx"))
