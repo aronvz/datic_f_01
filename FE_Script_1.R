@@ -3,21 +3,19 @@ library(ggplot2)
 library(reshape)
 library(tidyr)
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 #Carga de siniestros
 S_10_17 <- read_excel("SINIESTROS 2010-2017.xlsx")
 Frec_DENUNCIAS_10_16 <- read_excel("Frec_DENUNCIAS_ANUAL_2001_2016w.xlsx", sheet = "Homicidio", 
                                    col_names = T, skip = 3)
 Frec_DENUNCIAS_10_16
 SINIESTROS = S_10_17[S_10_17$Muertos > 0,]ñ
-=======
+
 syntaxdir <- c("C:\\Users\\pamel\\Google Drive\\DATIC\\Emilia\\datic_f_01\\")
-=======
+
 syntaxdir <- c("C:\\Users\\pamel\\Documents\\Emilia\\datic_f_01\\")
->>>>>>> 007c44e7b44686abba9dde9e9e6c52250c71fbdc
+
 source(paste0(syntaxdir,"FE_Source.R"))
->>>>>>> cfab334ec6b0551fbc2f7adba3f4744c87055698
+
 
 
 
