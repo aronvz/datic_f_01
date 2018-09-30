@@ -128,4 +128,4 @@ g2 <- image_read(animate(p))
 image_write(g2, "graf2.gif")
 
 #Grafico 4
-
+## new graph
