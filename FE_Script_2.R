@@ -1,6 +1,10 @@
 library(dplyr)
 library(ggplot2)
 #devtools::install_github('thomasp85/gganimate')
+<<<<<<< HEAD
+=======
+#instalar tweer primero
+>>>>>>> 6f72303d66753b836ccdaf2ead8a1293ed36479c
 library(gganimate)
 library(reshape)
 library(tidyr)
@@ -8,9 +12,15 @@ library(stringr)
 library(magick)
 plic <- installed.packages(.Library, priority = "high", fields = "License")
 
+<<<<<<< HEAD
 syntaxdir <- c("C:\\Users\\pamel\\Documents\\Emilia\\datic_f_01\\")
 #syntaxdir <- c("D:\\Work\\Datic\\FEmilia_Datos\\Etapa_1\\")
 source(paste0(syntaxdir,"FE_Source.R"))
+=======
+source(paste0(syntaxdir,"FE_Source_.R"))
+
+plic <- installed.packages(.Library, priority = "high", fields = "License")
+>>>>>>> 6f72303d66753b836ccdaf2ead8a1293ed36479c
 
 Fallecidos10_17 <- Siniestros10_17[Siniestros10_17$Muertos > 0,]
 Fallecidos10_17 <- Fallecidos10_17 %>% 
@@ -128,3 +138,4 @@ g2 <- image_read(animate(p))
 image_write(g2, "graf2.gif")
 
 #Grafico 4
+
