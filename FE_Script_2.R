@@ -1,15 +1,16 @@
 library(dplyr)
 library(ggplot2)
 #devtools::install_github('thomasp85/gganimate')
-#instalar tweer
+#instalar tweer primero
 library(gganimate)
 library(reshape)
 library(tidyr)
 library(stringr)
+library(magick)
 
 source(paste0(syntaxdir,"FE_Source_.R"))
-plic <- installed.packages(.Library, priority = "high", fields = "License")
 
+plic <- installed.packages(.Library, priority = "high", fields = "License")
 
 Fallecidos10_17 <- Siniestros10_17[Siniestros10_17$Muertos > 0,]
 Fallecidos10_17 <- Fallecidos10_17 %>% 
@@ -66,8 +67,8 @@ g1 <- ggplot(na.omit(datacast1), aes(x = Año, y = value, fill = variable)) +
   scale_y_continuous(breaks = c(seq(0,1800,200)), limits = c(0,1800)) +
   scale_x_continuous(breaks = unique(datacast1$Año)) +
   labs(y = "Casos policiales", caption = "Fuente: elaboración propia en base a:\n
-- Fallecidos: Carabineros de Chile, Solicitud de Información por Ley de Transparencia No AD009W0031944.\n
-- Homicidios: Subsecretaría de Prevención del Delito. http://www.seguridadpublica.gov.cl/estadisticas/") +
+       - Fallecidos: Carabineros de Chile, Solicitud de Información por Ley de Transparencia No AD009W0031944.\n
+       - Homicidios: Subsecretaría de Prevención del Delito. http://www.seguridadpublica.gov.cl/estadisticas/") +
   theme(plot.title = element_text(size = 10),legend.position = "bottom", axis.text.y = element_text(size = 8),
         panel.background = element_rect(fill = "gainsboro"), axis.text.x = element_text(size = 8))
 
@@ -121,10 +122,10 @@ p <- datamelt2 %>%
   labs(y = "Tasa",x = "Región", subtitle = "Año: {current_frame}", caption = "Fuente: elaboración propia en base a:\n
          - Fallecidos: Carabineros de Chile. Solicitud de Información por Ley de Transparencia No AD009W0031944.\n
        - Homicidios: Subsecretaría de Prevención del Delito. http://www.seguridadpublica.gov.cl/estadisticas/") +
-  transition_manual(Año)
+  transition_manual(Año) 
 
-
-animate(p)
+g2 <- image_read(animate(p))
+image_write(g2, "graf2.gif")
 
 #Grafico 4
 
