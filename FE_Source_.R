@@ -30,4 +30,4 @@ FreqDenuncias10_16 <- read_excel(paste0(pcdir,datadir,sub_delito), sheet = "Homi
 PoblacionRegiones <- read_excel(paste0(pcdir,datadir,censo))
 
 #DEIS
-#Deis <- read_csv(paste0(pcdir,datadir,deis))
+Deis <- read_csv(paste0(pcdir,datadir,deis))
