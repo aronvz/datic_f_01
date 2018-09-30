@@ -1,26 +1,12 @@
 library(dplyr)
 library(ggplot2)
-#devtools::install_github('thomasp85/gganimate')
-<<<<<<< HEAD
-=======
-#instalar tweer primero
->>>>>>> 6f72303d66753b836ccdaf2ead8a1293ed36479c
-library(gganimate)
 library(reshape)
 library(tidyr)
-library(stringr)
-library(magick)
-plic <- installed.packages(.Library, priority = "high", fields = "License")
 
-<<<<<<< HEAD
 syntaxdir <- c("C:\\Users\\pamel\\Documents\\Emilia\\datic_f_01\\")
-#syntaxdir <- c("D:\\Work\\Datic\\FEmilia_Datos\\Etapa_1\\")
 source(paste0(syntaxdir,"FE_Source.R"))
-=======
-source(paste0(syntaxdir,"FE_Source_.R"))
 
-plic <- installed.packages(.Library, priority = "high", fields = "License")
->>>>>>> 6f72303d66753b836ccdaf2ead8a1293ed36479c
+
 
 Fallecidos10_17 <- Siniestros10_17[Siniestros10_17$Muertos > 0,]
 Fallecidos10_17 <- Fallecidos10_17 %>% 
@@ -52,7 +38,7 @@ Fallecidos10_17 <- Fallecidos10_17 %>%
 
 Fallecidos <- Fallecidos10_17 %>% 
   group_by(Año) %>%
-  summarise(Fallecidos = sum(Fallecidos),
+  summarise(Fallecidos = sum(Muertos),
             Graves = sum(Graves)) %>%
   mutate(Victimas = Fallecidos + Graves)
 
@@ -69,7 +55,7 @@ datacast1 <- melt(as.data.frame(res1), id = 'Año')
 datacast1$variable <- ifelse(datacast1$variable == "Homicidios","Casos policiales homicidios",
                              ifelse(datacast1$variable == "Fallecidos","Fallecidos por siniestros viales",NA))
 
-g1 <- ggplot(na.omit(datacast1), aes(x = Año, y = value, fill = variable)) +
+ggplot(na.omit(datacast1), aes(x = Año, y = value, fill = variable)) +
   geom_bar(stat = "identity", color = "black", position = position_dodge()) +
   geom_text(aes(y = value, label = value), position = position_dodge(width = 0.9), vjust = -0.25, size = 3) + 
   scale_fill_discrete(name = " ") +
@@ -77,14 +63,12 @@ g1 <- ggplot(na.omit(datacast1), aes(x = Año, y = value, fill = variable)) +
   scale_y_continuous(breaks = c(seq(0,1800,200)), limits = c(0,1800)) +
   scale_x_continuous(breaks = unique(datacast1$Año)) +
   labs(y = "Casos policiales", caption = "Fuente: elaboración propia en base a:\n
-       - Fallecidos: Carabineros de Chile, Solicitud de Información por Ley de Transparencia No AD009W0031944.\n
-       - Homicidios: Subsecretaría de Prevención del Delito. http://www.seguridadpublica.gov.cl/estadisticas/") +
+- Fallecidos: Carabineros de Chile, Solicitud de Información por Ley de Transparencia No AD009W0031944.\n
+- Homicidios: Subsecretaría de Prevención del Delito. http://www.seguridadpublica.gov.cl/estadisticas/") +
   theme(plot.title = element_text(size = 10),legend.position = "bottom", axis.text.y = element_text(size = 8),
         panel.background = element_rect(fill = "gainsboro"), axis.text.x = element_text(size = 8))
 
-png(file = "graf1.png")
-g1
-dev.off()
+
 #################################################################
 #Grafico 2
 #################################################################
@@ -132,13 +116,8 @@ p <- datamelt2 %>%
   labs(y = "Tasa",x = "Región", subtitle = "Año: {current_frame}", caption = "Fuente: elaboración propia en base a:\n
          - Fallecidos: Carabineros de Chile. Solicitud de Información por Ley de Transparencia No AD009W0031944.\n
        - Homicidios: Subsecretaría de Prevención del Delito. http://www.seguridadpublica.gov.cl/estadisticas/") +
-  transition_manual(Año) 
-
-g2 <- image_read(animate(p))
-image_write(g2, "graf2.gif")
-image_write(g2, "graf2.gif")
-
-#Grafico 4
-## new graph
+  transition_manual(Año)
 
 
+animate(p)
+#commmmm
